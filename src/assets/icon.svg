@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 512 512" width="512" height="512" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <filter id="hue-rotate-filter-0" x="-500%" y="-500%" width="1000%" height="1000%" bx:preset="hue-rotate 1 -174">
+      <feColorMatrix type="hueRotate" values="-174"/>
+    </filter>
+    <filter id="invert-filter-0" x="-500%" y="-500%" width="1000%" height="1000%" bx:preset="invert 1 1">
+      <feComponentTransfer>
+        <feFuncR type="table" tableValues="1 0"/>
+        <feFuncG type="table" tableValues="1 0"/>
+        <feFuncB type="table" tableValues="1 0"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+  <g style="filter: url(#hue-rotate-filter-0);">
+    <g>
+      <rect fill="#ea4335" x="27.53" y="328.9" width="373" height="107" rx="53.5"/>
+      <circle fill="#fff" cx="81.36" cy="382.6" r="26.7"/>
+    </g>
+    <g>
+      <rect fill="#fbbc04" x="53.33" y="250.94" width="373" height="107" rx="53.5" transform="translate(254.91 691.72) rotate(-144)"/>
+      <circle fill="#fff" cx="131.44" cy="225.44" r="26.7"/>
+    </g>
+    <g>
+      <rect fill="#34a853" x="120.53" y="201.9" width="373" height="107" rx="53.5" transform="translate(455.05 -115.53) rotate(72)"/>
+      <circle fill="#fff" cx="265.84" cy="129.28" r="26.7"/>
+    </g>
+    <g>
+      <rect fill="#4285f4" x="202.53" y="201.9" width="373" height="107" rx="53.5" transform="translate(25.92 546.46) rotate(-72)"/>
+      <circle fill="#fff" cx="348.22" cy="381.64" r="26.7"/>
+      <circle fill="#fff" cx="430.67" cy="127.89" r="26.7"/>
+    </g>
+    <g transform="matrix(11.749482, 0, 0, 11.749482, 146.751556, 181.143372)" style="filter: url(#invert-filter-0); mix-blend-mode: saturation;"/>
+  </g>
+  <g transform="matrix(6.578947, 0, 0, 6.578947, 188.818698, 223.221042)">
+    <path d="M3 19h6v-7H3v7zm7 0h12v-7H10v7zM3 5v6h19V5H3z" style="fill: rgb(255, 255, 255);"/>
+  </g>
+</svg>
