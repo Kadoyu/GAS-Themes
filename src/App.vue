@@ -3,7 +3,7 @@
     <v-app-bar app shrink-on-scroll>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title class="font-weight-bold">
-        {{this.$route.path}}
+        {{this.$route.name}}
         <v-hover v-slot="{ hover }">
           <v-btn
             absolute
@@ -28,7 +28,7 @@
         direction="left"
         transition="slide-x-reverse-transition"
       >
-        <v-btn fab small> <v-icon>mdi-information-outline</v-icon></v-btn>
+        <v-btn fab small to="/about"> <v-icon>mdi-information-outline</v-icon></v-btn>
 
         <template v-slot:activator>
           <v-btn v-model="fab" icon @click="hidden = !hidden">
@@ -48,8 +48,27 @@
         </v-list-item-content>
       </v-list-item>
 
-      <v-footer padless fixed height="50px">
-        <v-row justify="center" no-gutters>
+      <v-divider></v-divider>
+
+      <v-list dense nav>
+        <v-list-item
+          v-for="item in items"
+          :key="item"
+          @click="title = item.title"
+          link
+          :to="item.href"
+        >
+          <v-list-item-icon>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+
+        <div class="my-10">
+          <v-row justify="center" no-gutters>
           <v-hover v-for="link in links" :key="link" v-slot="{ hover }">
             <v-btn
               color="primary"
@@ -70,30 +89,13 @@
             class="mx-4"
             fab
             small
+            to="/about"
           >
             <v-icon> mdi-help </v-icon>
           </v-btn>
         </v-row>
-      </v-footer>
-
-      <v-divider></v-divider>
-
-      <v-list dense nav>
-        <v-list-item
-          v-for="item in items"
-          :key="item"
-          @click="title = item.title"
-          link
-          :to="item.href"
-        >
-          <v-list-item-icon>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-icon>
-
-          <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
+        </div>
+        
       </v-list>
     </v-navigation-drawer>
 
