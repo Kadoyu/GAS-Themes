@@ -2,14 +2,14 @@
   <v-container>
     <v-list subheader two-line flat>
       <v-subheader>General</v-subheader>
-      <v-list-item-group v-model="settings" multiple>
+      <v-list-item-group v-model="theme" multiple>
         <v-list-item>
-          <template v-slot:default="{ active, }">
+          <template v-slot:default="{ active }">
             
             <v-list-item-content>
               <v-list-item-title>Turn on Dark theme</v-list-item-title>
               <v-list-item-subtitle
-                >To enable Dark theme to this page</v-list-item-subtitle
+                >Enable Dark theme to this page</v-list-item-subtitle
               >
             </v-list-item-content>
 
@@ -27,9 +27,15 @@
 </template>
 
 <script>
+
 export default {
     data: () => ({
-        settings: [],
-    })
+      theme: [],
+    }),
+    watch: {
+      theme() {
+        this.$vuetify.theme.dark = this.theme.length
+      }
+    }
 };
 </script>
