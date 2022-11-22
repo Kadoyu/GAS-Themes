@@ -112,6 +112,7 @@
 </template>
 
 <script>
+import manifest from '../public/manifest.json'
 export default {
   data: () => ({
     name: '',
@@ -137,7 +138,7 @@ export default {
       { title: "Settings", icon: "mdi-cog", href: "/settings" },
       { title: "About", icon: "mdi-help-box", href: "/about" },
     ],
-    version: "1.0.0",
+    version: manifest.version,
   }),
   methods: {
   },

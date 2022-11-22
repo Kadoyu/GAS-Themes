@@ -1,0 +1,14 @@
+{
+  "name": "GAS-Themes",
+  "description": "Themes for Google Apps Script",
+  "version": "0.0.1",
+  "manifest_version": 3,
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "assets/16icon.png",
+      "48": "assets/48icon.png"
+    }
+  }
+}
