@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row>
-      <v-col v-for="theme in themes" :key="theme" cols="12" sm="4">
+      <v-col v-for="theme in themes" :key="theme" cols="12" lg="3" sm="6">
           <v-card class="mx-auto" max-width="300">
             <v-img :src="theme.img" height="200px"></v-img>
 
@@ -47,7 +47,6 @@ export default {
         img: "https://i0.wp.com/www.playearth10.com/wp-content/uploads/2012/12/c076d3ed976bf535b631ecb9ee1e913a.jpg?fit=3840%2C2880&ssl=1",
         title: "fuga",
       },
-      
     ],
   }),
   create: function(){
