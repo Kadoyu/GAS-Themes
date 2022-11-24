@@ -1,9 +1,9 @@
 <template>
   <v-app id="inspire">
-    <v-app-bar app shrink-on-scroll>
+    <v-app-bar app shrink-on-scroll scroll-target="#scrolling-techniques-2">
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title class="font-weight-bold">
-        {{this.$route.name}}
+        {{ this.$route.name }}
         <v-hover v-slot="{ hover }">
           <v-btn
             absolute
@@ -28,7 +28,9 @@
         direction="left"
         transition="slide-x-reverse-transition"
       >
-        <v-btn fab small to="/about"> <v-icon>mdi-information-outline</v-icon></v-btn>
+        <v-btn fab small to="/about">
+          <v-icon>mdi-information-outline</v-icon></v-btn
+        >
 
         <template v-slot:activator>
           <v-btn v-model="fab" icon @click="hidden = !hidden">
@@ -69,40 +71,35 @@
 
         <div class="my-10">
           <v-row justify="center" no-gutters>
-          <v-hover v-for="link in links" :key="link" v-slot="{ hover }">
-            <v-btn
-              color="primary"
-              :elevation="hover ? 12 : 2"
-              :href="link.href"
-              target="_blank"
-              class="mx-4"
-              fab
-              small
-            >
-              <v-icon> {{ link.icon }} </v-icon>
-            </v-btn>
-          </v-hover>
-
-          <v-btn
-            color="primary"
-            :elevation="hover ? 12 : 2"
-            class="mx-4"
-            fab
-            small
-            to="/about"
-          >
-            <v-icon> mdi-help </v-icon>
-          </v-btn>
-        </v-row>
+            <v-hover v-for="link in links" :key="link" v-slot="{ hover }">
+              <v-btn
+                color="primary"
+                :elevation="hover ? 12 : 2"
+                :href="link.href"
+                target="_blank"
+                class="mx-4"
+                fab
+                small
+              >
+                <v-icon> {{ link.icon }} </v-icon>
+              </v-btn>
+            </v-hover>
+          </v-row>
         </div>
-        
       </v-list>
     </v-navigation-drawer>
 
-    <v-main>
-      <router-view></router-view>
-      <v-overlay :value="overlay" z-index="0"></v-overlay>
-    </v-main>
+    <v-sheet
+      id="scrolling-techniques-2"
+      class="overflow-y-auto"
+      height="500"
+    >
+      <v-main>
+        <router-view></router-view>
+        <v-overlay :value="overlay" z-index="0"></v-overlay>
+      </v-main>
+    </v-sheet>
+
     <v-footer padless>
       <v-col class="text-center" cols="12">
         {{ new Date().getFullYear() }} — <strong>Kadoyu</strong>
@@ -112,10 +109,10 @@
 </template>
 
 <script>
-import manifest from '../public/manifest.json'
+import manifest from "../public/manifest.json";
 export default {
   data: () => ({
-    name: '',
+    name: "",
     drawer: false,
     about: false,
     hidden: false,
@@ -140,7 +137,6 @@ export default {
     ],
     version: manifest.version,
   }),
-  methods: {
-  },
+  methods: {},
 };
 </script>
